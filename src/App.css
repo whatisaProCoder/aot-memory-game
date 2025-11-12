@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'MetalMania';
+  src: url('./assets/fonts/MetalMania.ttf') format('truetype');
+}
+
+#root {
+  margin: 0 auto;
+  height: 100vh;
+  font-family: "MetalMania";
+}
+
+.outline-text {
+  -webkit-text-stroke: 0.75px black;
+  /* Works in Chrome, Edge, Safari, Opera */
+
+  /* Fallback for Firefox (uses text-shadow to simulate stroke) */
+  text-shadow:
+    0.75px 0.75px 0 black,
+    -0.75px 0.75px 0 black,
+    0.75px -0.75px 0 black,
+    -0.75px -0.75px 0 black;
+
+  font-weight: 700;
+}
+
+.outline-text-small {
+  -webkit-text-stroke: 0.25px black;
+  /* Works in Chrome, Edge, Safari, Opera */
+
+  /* Fallback for Firefox (uses text-shadow to simulate stroke) */
+  text-shadow:
+    0.25px 0.25px 0 black,
+    -0.25px 0.25px 0 black,
+    0.25px -0.25px 0 black,
+    -0.25px -0.25px 0 black;
+
+  font-weight: 700;
+}
