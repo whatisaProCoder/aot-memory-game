@@ -17,7 +17,7 @@ function HomePage() {
           <LevelButton
             text="Easy"
             onClick={() => alert("Easy Clicked!")}
-            color="#36bb2a"
+            color="#45d138"
           />
           <LevelButton
             text="Medium"
