@@ -6,7 +6,7 @@ function HomePage() {
     <>
       <img
         src={backgroundImage}
-        className="fixed h-full w-full object-fill z-[-1]"
+        className="fixed h-full w-full object-cover z-[-1]"
       />
       <div className="flex flex-col justify-center items-center h-full">
         <div className="flex flex-col items-center bg-[#3535357b] backdrop-blur-2xl border-b border-[#323232] rounded-2xl outline-text px-10 py-6">
