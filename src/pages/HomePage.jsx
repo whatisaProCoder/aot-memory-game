@@ -1,4 +1,5 @@
 import backgroundImage from "../assets/images/background.png";
+import Footer from "../components/Footer";
 import LevelButton from "../components/LevelButton";
 
 function HomePage() {
@@ -29,6 +30,11 @@ function HomePage() {
             onClick={() => alert("Hard Clicked!")}
             color="#ce3737"
           />
+        </div>
+        <div className="fixed bottom-0 left-0 right-0 flex flex-row justify-center">
+          <div className="w-[400px]">
+            <Footer />
+          </div>
         </div>
       </div>
     </>
