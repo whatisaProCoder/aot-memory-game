@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import backgroundImage from "../assets/images/background.png";
+import backgroundImage from "../assets/images/background.webp";
 import Footer from "../components/Footer";
 import LevelButton from "../components/LevelButton";
 import { Link } from "react-router-dom";

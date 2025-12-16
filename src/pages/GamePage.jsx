@@ -1,4 +1,4 @@
-import backgroundImage from "../assets/images/background.png";
+import backgroundImage from "../assets/images/background.webp";
 import backIcon from "../assets/icons/back_icon.svg";
 import { useState, useEffect } from "react";
 import {
