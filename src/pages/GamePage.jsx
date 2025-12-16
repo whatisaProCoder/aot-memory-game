@@ -163,7 +163,7 @@ function GamePage({ levelID }) {
             </div>
           </div>
         </div>
-        <div className="mt-10 outline-text text-4xl max-md:text-3xl max-sm:text-2xl px-4 text-center">
+        <div className="mt-10 outline-text text-4xl max-md:text-3xl max-sm:text-2xl px-6 text-center">
           <span className="text-[#FF5757]">Rule</span> : Don’t click the same
           character twice!
         </div>
