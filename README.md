@@ -1,16 +1,86 @@
-# React + Vite
+# Attack on Titan Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based memory card game featuring characters from Attack on Titan. Built as part of [The Odin Project](https://www.theodinproject.com/) curriculum.
 
-Currently, two official plugins are available:
+## 🎮 About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Test your memory by clicking on character cards without clicking the same character twice! The game features three difficulty levels and tracks your best scores using local storage.
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Three Difficulty Levels:**
+  - Easy: 3x3 grid (9 cards)
+  - Medium: 4x3 grid (12 cards)
+  - Hard: 6x3 grid (18 cards)
+- **Dynamic Character Loading:** Fetches random Attack on Titan characters from the [Attack on Titan API](https://attackontitanapi.com/)
+- **Score Tracking:** Tracks current score and best score per difficulty level
+- **Smooth Animations:** Card shuffle animations using Motion library
+- **Persistent Storage:** Best scores saved in browser local storage
+- **Responsive Design:** Styled with Tailwind CSS
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** 19.2 - UI framework
+- **Vite** - Build tool and dev server
+- **React Router** - Client-side routing
+- **Tailwind CSS** - Styling
+- **Motion** - Animations
+- **Attack on Titan API** - Character data
+
+## 🚀 Getting Started
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/       # Reusable UI components
+│   ├── CharacterCard.jsx
+│   ├── Footer.jsx
+│   └── LevelButton.jsx
+├── pages/           # Page components
+│   ├── HomePage.jsx
+│   └── GamePage.jsx
+├── constants/       # Game configuration
+│   └── levels.js
+├── utils/          # Helper functions and utilities
+│   ├── API.js      # API integration
+│   ├── helper.js   # Utility functions
+│   └── storage.js  # Local storage management
+└── assets/         # Images, icons, fonts
+```
+
+## 🎯 Game Rules
+
+1. Click on any character card to start
+2. Cards shuffle after each click
+3. Don't click the same character twice
+4. Win by clicking all unique characters
+5. Game over if you click a character you've already selected
+
+## 📝 Curriculum
+
+This project is part of The Odin Project curriculum.
