@@ -120,7 +120,7 @@ function GamePage({ levelID }) {
         <div className="flex flex-row justify-center items-center gap-3">
           <button
             onClick={() => navigate("/")}
-            className="bg-[#3535357b] backdrop-blur-2xl border border-[#555555] rounded-full h-12 aspect-square flex flex-row justify-center items-center"
+            className="bg-[#3535357b] transition-all hover:brightness-135 backdrop-blur-2xl border border-[#555555] rounded-full h-12 aspect-square flex flex-row justify-center items-center"
           >
             <img src={backIcon} className="w-8 aspect-square pr-0.5" />
           </button>

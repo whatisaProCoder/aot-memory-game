@@ -24,7 +24,7 @@ function HomePage() {
           <div className="text-6xl">Attack on Titan</div>
           <div className="mt-2 text-5xl text-[#66D96E]">Memory Game</div>
         </div>
-        <div className="mt-8 flex flex-row items-center gap-4 bg-[#3535357b] backdrop-blur-2xl border-b border-[#323232] rounded-3xl outline-text p-4">
+        <div className="mt-8 flex flex-row items-center gap-4 bg-[#3535357b] backdrop-blur-2xl border-b border-[#323232] rounded-3xl p-4">
           <Link to="/easy-mode">
             <LevelButton text="Easy" color="#45d138" />
           </Link>
