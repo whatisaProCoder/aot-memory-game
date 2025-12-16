@@ -143,7 +143,7 @@ function GamePage({ levelID }) {
             </button>
 
             <div className="bg-[#3535357b] backdrop-blur-2xl border border-[#555555] rounded-[1.25rem] text-2xl max-sm:text-xl max-sm:w-full max-sm:text-center px-12 py-1.75">
-              Attack on Titan
+              {isMobile ? "AoT Game" : "Attack on Titan"}
             </div>
             <div
               className="backdrop-blur-2xl border text-white border-[#555555] rounded-[1.25rem] text-2xl max-sm:text-xl px-8 py-1.75"
