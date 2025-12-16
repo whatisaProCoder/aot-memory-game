@@ -16,7 +16,7 @@ import CharacterCard from "../components/CharacterCard";
 import { useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line no-unused-vars
-import { motion } from "motion/react";
+import { motion, time } from "motion/react";
 
 import Storage from "../utils/storage";
 
@@ -26,8 +26,6 @@ function GamePage({ levelID }) {
   const storage = Storage();
 
   const [loading, setLoading] = useState(true);
-
-  setInterval(() => setLoading(false), 700);
 
   const [reset, setReset] = useState(false);
 
@@ -40,6 +38,7 @@ function GamePage({ levelID }) {
   const levelConfig = LEVEL_CONFIG.filter((level) => level.id === levelID)[0];
 
   useEffect(() => {
+    const timeout = setTimeout(() => setLoading(false), 700);
     setBestScore(
       storage
         .getBestScores()
@@ -47,6 +46,9 @@ function GamePage({ levelID }) {
           (scoreObject) => scoreObject.levelID === levelConfig.id
         )[0].score
     );
+    return () => {
+      clearTimeout(timeout);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
