@@ -16,7 +16,7 @@ import CharacterCard from "../components/CharacterCard";
 import { useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line no-unused-vars
-import { motion, time } from "motion/react";
+import { motion } from "motion/react";
 
 import Storage from "../utils/storage";
 
@@ -95,8 +95,12 @@ function GamePage({ levelID }) {
   function userClick(characterObject) {
     if (!characterObject.clicked) {
       setScore((score) => score + 1);
-      characterObject.clicked = true;
-      if (score == levelConfig.numberOfCells) {
+      const newCharacterArray = [...characterArray];
+      newCharacterArray.find(
+        (character) => character.id === characterObject.id
+      ).clicked = true;
+      setCharacterArray(newCharacterArray);
+      if (score + 1 === levelConfig.numberOfCells) {
         updateBestScore();
         alert("You Won!");
         resetGame();
@@ -171,8 +175,6 @@ function GamePage({ levelID }) {
           ))}
         </motion.div>
       </div>
-
-      <img />
     </>
   );
 }
