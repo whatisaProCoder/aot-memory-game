@@ -26,7 +26,7 @@ function HomePage() {
             Memory Game
           </div>
         </div>
-        <div className="mt-8 flex flex-row max-sm:flex-col items-center gap-4 bg-[#3535357b] backdrop-blur-2xl border-b border-[#323232] rounded-3xl p-4">
+        <div className="mt-8 max-sm:mt-24 flex flex-row max-sm:flex-col items-center gap-4 bg-[#3535357b] backdrop-blur-2xl border-b border-[#323232] rounded-3xl p-4">
           <Link to="/easy-mode" className="w-full">
             <LevelButton text="Easy" color="#45d138" />
           </Link>
