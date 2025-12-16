@@ -1,6 +1,8 @@
 # Attack on Titan Memory Game
 
-A React-based memory card game featuring characters from Attack on Titan. Built as part of [The Odin Project](https://www.theodinproject.com/) curriculum.
+A React-based memory card game featuring characters from Attack on Titan.
+
+![Showcase](./public/showcase.png)
 
 ## 🎮 About
 
