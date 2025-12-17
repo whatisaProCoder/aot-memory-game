@@ -213,13 +213,11 @@ function GamePage({ levelID }) {
             }}
           >
             {characterArray.map((characterObject) => (
-              <motion.div
-                layout="position"
+              <CharacterCard
                 key={characterObject.id}
                 onClick={() => userClick(characterObject)}
-              >
-                <CharacterCard characterObject={characterObject} />
-              </motion.div>
+                characterObject={characterObject}
+              />
             ))}
           </motion.div>
         )}
