@@ -47,6 +47,8 @@ function GamePage({ levelID }) {
 
   const [characterArray, setCharacterArray] = useState([]);
 
+  console.log(characterArray);
+
   const levelConfig = LEVEL_CONFIG.filter((level) => level.id === levelID)[0];
 
   useEffect(() => {
@@ -133,7 +135,7 @@ function GamePage({ levelID }) {
         updateBestScore();
         openAlertBox(
           "You Won!",
-          "Congratulations, you will soon remember every AoT character now!"
+          "Congratulations, you will soon remember every AoT character!"
         );
       }
       shuffle();
