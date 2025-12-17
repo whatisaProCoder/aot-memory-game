@@ -14,7 +14,7 @@ function shuffleArray(array) {
 function extractCharactersInfo(apiJSON) {
   let characterInfo = []
   apiJSON.results.forEach(character => {
-    if (character.img !== undefined)
+    if (character.img !== null || character.img !== undefined)
       characterInfo.push({
         id: character.id, name: character.name, img: character.img.substring(0, character.img.indexOf("png")) +
           "png"
