@@ -2,7 +2,6 @@ function setBestScores(levelID, bestScore) {
   const bestScores = structuredClone(getBestScores())
   if (bestScores !== undefined) {
     bestScores.scores.filter(scoreObject => scoreObject.levelID === levelID)[0].score = bestScore
-    console.log(bestScores)
     localStorage.setItem("best-scores", JSON.stringify(bestScores))
   }
 }

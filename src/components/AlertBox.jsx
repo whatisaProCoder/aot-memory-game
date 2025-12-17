@@ -20,7 +20,7 @@ function AlertBox({ header, subtext, onClose }) {
         <div className="text-2xl max-sm:text-xl text-center">{subtext}</div>
         <button
           onClick={() => onRestartClick()}
-          className="bg-[#e72121] transition-colors hover:bg-[#f83333] active:bg-[#da1515] text-white text-2xl px-5 py-1 rounded-md border border-[#f86e6e]"
+          className="bg-[#e72121] transition-colors hover:bg-[#f83333] border-[#f86e6e] active:bg-[#da1515] active:border-[#eb3b3b] text-white text-2xl px-5 py-1 rounded-md border"
         >
           Restart
         </button>
