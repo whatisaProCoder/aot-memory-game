@@ -87,9 +87,8 @@ function GamePage({ levelID }) {
       })
       .catch((error) => {
         console.log(error);
-        if (alert("Encountered some issue, wanna reload?")) {
-          setReset(!reset);
-        }
+        console.log("Trying to reload data from API...");
+        setReset(!reset);
       });
   }, [levelID, levelConfig, reset]);
 
