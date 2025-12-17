@@ -87,6 +87,11 @@ function GamePage({ levelID }) {
       });
   }, [levelID, levelConfig, reset]);
 
+  function resetGame() {
+    setScore(0);
+    setReset(!reset);
+  }
+
   function closeAlertBox() {
     const newAlertBoxObj = { ...alertBox };
     newAlertBoxObj.isOpen = false;
@@ -107,11 +112,6 @@ function GamePage({ levelID }) {
   function shuffle() {
     const newCharacterArray = [...shuffleArray(characterArray)];
     setCharacterArray(newCharacterArray);
-  }
-
-  function resetGame() {
-    setScore(0);
-    setReset(!reset);
   }
 
   function updateBestScore() {
