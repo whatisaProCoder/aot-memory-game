@@ -97,6 +97,10 @@ function GamePage({ levelID }) {
   }
 
   function openAlertBox(headerMsg, subMsg) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     const newAlertBoxObj = { ...alertBox };
     newAlertBoxObj.isOpen = true;
     newAlertBoxObj.headerMsg = headerMsg;
