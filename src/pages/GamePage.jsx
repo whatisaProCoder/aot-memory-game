@@ -144,7 +144,10 @@ function GamePage({ levelID }) {
       shuffle();
     } else {
       updateBestScore();
-      openAlertBox("Game Over!", `You clicked ${characterObject.name} twice.`);
+      openAlertBox(
+        "Game Over!",
+        `You clicked "${characterObject.name}" twice.`
+      );
     }
   }
 
