@@ -9,7 +9,7 @@ function HomePage() {
   const storage = Storage();
   useEffect(() => {
     storage.initialiseScoreObject();
-    console.log("storage initialized");
+    console.log("Storage initialized...");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
