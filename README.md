@@ -60,9 +60,10 @@ npm run preview
 ```
 src/
 ├── components/       # Reusable UI components
+|   ├── AlertBox.jsx
 │   ├── CharacterCard.jsx
 │   ├── Footer.jsx
-│   └── LevelButton.jsx
+|   └── LevelButton.jsx
 ├── pages/           # Page components
 │   ├── HomePage.jsx
 │   └── GamePage.jsx
