@@ -97,10 +97,6 @@ function GamePage({ levelID }) {
   }
 
   function openAlertBox(headerMsg, subMsg) {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
     const newAlertBoxObj = { ...alertBox };
     newAlertBoxObj.isOpen = true;
     newAlertBoxObj.headerMsg = headerMsg;
@@ -201,30 +197,32 @@ function GamePage({ levelID }) {
           <span className="text-[#FF5757]">Rule</span> : Don’t click the same
           character twice!
         </div>
-        <motion.div
-          layout
-          className="p-4 mb-4 grid gap-4"
-          style={{
-            gridTemplateColumns: `repeat(${
-              isMobile ? 3 : levelConfig.gridColumns
-            }, 1fr)`,
-          }}
-          transition={{
-            layout: {
-              duration: 0.45,
-            },
-          }}
-        >
-          {characterArray.map((characterObject) => (
-            <motion.div
-              layout="position"
-              key={characterObject.id}
-              onClick={() => userClick(characterObject)}
-            >
-              <CharacterCard characterObject={characterObject} />
-            </motion.div>
-          ))}
-        </motion.div>
+        {!alertBox.isOpen && (
+          <motion.div
+            layout
+            className="p-4 mb-4 grid gap-4 fade-in"
+            style={{
+              gridTemplateColumns: `repeat(${
+                isMobile ? 3 : levelConfig.gridColumns
+              }, 1fr)`,
+            }}
+            transition={{
+              layout: {
+                duration: 0.45,
+              },
+            }}
+          >
+            {characterArray.map((characterObject) => (
+              <motion.div
+                layout="position"
+                key={characterObject.id}
+                onClick={() => userClick(characterObject)}
+              >
+                <CharacterCard characterObject={characterObject} />
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </>
   );
