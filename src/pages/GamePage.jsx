@@ -199,7 +199,7 @@ function GamePage({ levelID }) {
         </div>
         <motion.div
           layout
-          className="p-4 grid gap-4"
+          className="p-4 mb-4 grid gap-4"
           style={{
             gridTemplateColumns: `repeat(${
               isMobile ? 3 : levelConfig.gridColumns
