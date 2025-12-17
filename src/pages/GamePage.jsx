@@ -20,13 +20,12 @@ import { motion } from "motion/react";
 
 import Storage from "../utils/storage";
 import { useMediaQuery } from "react-responsive";
+import AlertBox from "../components/AlertBox";
 
 function GamePage({ levelID }) {
   const isMobile = useMediaQuery({
     query: "(max-width: 640px)",
   });
-
-  console.log(isMobile);
 
   const navigate = useNavigate();
 
@@ -35,6 +34,12 @@ function GamePage({ levelID }) {
   const [loading, setLoading] = useState(true);
 
   const [reset, setReset] = useState(false);
+
+  const [alertBox, setAlertBox] = useState({
+    headerMsg: "",
+    subMsg: "",
+    isOpen: false,
+  });
 
   const [score, setScore] = useState(0);
 
@@ -82,6 +87,23 @@ function GamePage({ levelID }) {
       });
   }, [levelID, levelConfig, reset]);
 
+  function closeAlertBox() {
+    const newAlertBoxObj = { ...alertBox };
+    newAlertBoxObj.isOpen = false;
+    newAlertBoxObj.headerMsg = "";
+    newAlertBoxObj.subMsg = "";
+    setAlertBox(newAlertBoxObj);
+    resetGame();
+  }
+
+  function openAlertBox(headerMsg, subMsg) {
+    const newAlertBoxObj = { ...alertBox };
+    newAlertBoxObj.isOpen = true;
+    newAlertBoxObj.headerMsg = headerMsg;
+    newAlertBoxObj.subMsg = subMsg;
+    setAlertBox(newAlertBoxObj);
+  }
+
   function shuffle() {
     const newCharacterArray = [...shuffleArray(characterArray)];
     setCharacterArray(newCharacterArray);
@@ -109,14 +131,15 @@ function GamePage({ levelID }) {
       setCharacterArray(newCharacterArray);
       if (score + 1 === levelConfig.numberOfCells) {
         updateBestScore();
-        alert("You Won!");
-        resetGame();
+        openAlertBox(
+          "You Won!",
+          "Congratulations, you will soon remember every AoT character now!"
+        );
       }
       shuffle();
     } else {
       updateBestScore();
-      alert(`You clicked ${characterObject.name} twice. Game Over!`);
-      resetGame();
+      openAlertBox("Game Over!", `You clicked ${characterObject.name} twice.`);
     }
   }
 
@@ -126,11 +149,18 @@ function GamePage({ levelID }) {
         src={backgroundImage}
         className="fixed h-full w-full object-cover z-[-1]"
       />
+      {alertBox.isOpen && (
+        <AlertBox
+          header={alertBox.headerMsg}
+          subtext={alertBox.subMsg}
+          onClose={() => closeAlertBox()}
+        />
+      )}
       <div
         className="flex flex-col items-center h-full transition-opacity hide-scrollbar"
         style={{ opacity: loading ? 0 : 1 }}
       >
-        <div className="mt-8 mb-8 flex flex-row justify-center gap-3 max-md:flex-col max-sm:w-full px-4">
+        <div className="mt-8 mb-8 flex flex-row justify-center gap-3 max-md:flex-col max-sm:w-full px-4 z-10">
           <div className="flex flex-row items-center gap-3">
             <button
               onClick={() => navigate("/")}
@@ -163,7 +193,7 @@ function GamePage({ levelID }) {
             </div>
           </div>
         </div>
-        <div className="mt-10 outline-text text-4xl max-md:text-3xl max-sm:text-2xl px-6 text-center">
+        <div className="mt-8 outline-text text-4xl max-md:text-3xl max-sm:text-2xl px-6 text-center">
           <span className="text-[#FF5757]">Rule</span> : Don’t click the same
           character twice!
         </div>

@@ -38,9 +38,7 @@ function HomePage() {
           </Link>
         </div>
         <div className="fixed bottom-0 left-0 right-0 flex flex-row justify-center">
-          <div className="w-[400px]">
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </div>
     </>
