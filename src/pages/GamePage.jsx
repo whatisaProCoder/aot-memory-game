@@ -160,7 +160,7 @@ function GamePage({ levelID }) {
         className="flex flex-col items-center h-full transition-opacity hide-scrollbar"
         style={{ opacity: loading ? 0 : 1 }}
       >
-        <div className="my-8 max-sm:my-4 flex flex-row justify-center gap-3 max-md:flex-col max-sm:w-full px-4 z-10">
+        <div className="my-8 flex flex-row justify-center gap-3 max-md:flex-col max-sm:w-full px-4 z-10">
           <div className="flex flex-row items-center gap-3">
             <button
               onClick={() => navigate("/")}
@@ -193,13 +193,13 @@ function GamePage({ levelID }) {
             </div>
           </div>
         </div>
-        <div className="mt-8 outline-text text-4xl max-md:text-3xl max-sm:text-2xl px-6 text-center">
+        <div className="my-8 max-sm:my-6 outline-text text-4xl max-md:text-3xl max-sm:text-2xl px-6 text-center">
           <span className="text-[#FF5757]">Rule</span> : Don’t click the same
           character twice!
         </div>
         <motion.div
           layout
-          className="p-4 mt-10 grid gap-4"
+          className="p-4 grid gap-4"
           style={{
             gridTemplateColumns: `repeat(${
               isMobile ? 3 : levelConfig.gridColumns
