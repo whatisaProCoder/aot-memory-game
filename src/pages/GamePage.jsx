@@ -160,7 +160,7 @@ function GamePage({ levelID }) {
         className="flex flex-col items-center h-full transition-opacity hide-scrollbar"
         style={{ opacity: loading ? 0 : 1 }}
       >
-        <div className="mt-8 mb-8 flex flex-row justify-center gap-3 max-md:flex-col max-sm:w-full px-4 z-10">
+        <div className="my-8 max-sm:my-4 flex flex-row justify-center gap-3 max-md:flex-col max-sm:w-full px-4 z-10">
           <div className="flex flex-row items-center gap-3">
             <button
               onClick={() => navigate("/")}
