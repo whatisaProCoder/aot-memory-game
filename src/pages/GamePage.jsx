@@ -47,8 +47,6 @@ function GamePage({ levelID }) {
 
   const [characterArray, setCharacterArray] = useState([]);
 
-  console.log(characterArray);
-
   const levelConfig = LEVEL_CONFIG.filter((level) => level.id === levelID)[0];
 
   useEffect(() => {
