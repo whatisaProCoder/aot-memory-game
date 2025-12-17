@@ -84,6 +84,12 @@ function GamePage({ levelID }) {
       })
       .then((characterArray) => {
         setCharacterArray(characterArray);
+      })
+      .catch((error) => {
+        console.log(error);
+        if (alert("Encountered some issue, wanna reload?")) {
+          setReset(!reset);
+        }
       });
   }, [levelID, levelConfig, reset]);
 
